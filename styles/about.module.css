@@ -1,0 +1,10 @@
+.header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 6rem;
+    margin-bottom: 3rem;
+}
+
+.description {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
