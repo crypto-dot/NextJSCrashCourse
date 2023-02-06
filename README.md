@@ -1,3 +1,7 @@
+# NextJS Crash Course
+
+This project was a quick overview of the features of NextJS and how to use navigate the file structure of a NextJS application. I followed along Travesty Media's NextJS Crash Course.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
