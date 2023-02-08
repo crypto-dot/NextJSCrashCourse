@@ -3,12 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
-interface Article {
-  id: number,
-  userId: number,
-  body: string,
-  title: string
-}
+
 
 export default function Home(props: { articles: Article[] }) {
   return (
@@ -37,11 +32,31 @@ export default function Home(props: { articles: Article[] }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=6");
-  const articles: Article[] = await res.json();
-  return {
-    props: {
-      articles
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=6");
+    if (!res.ok) {
+      throw new Error("Bad Response", {
+        cause: { res }
+      })
+    }
+    const articles: Article[] = await res.json();
+    return {
+      props: {
+        articles
+      }
+    }
+  } catch (err: any) {
+    if (err instanceof Error) {
+      switch (err.cause.res?.status) {
+        case 400: break;
+        case 401: break;
+        // Error handling
+      }
+    }
+
+    else {
+      console.error(err);
     }
   }
+
 }

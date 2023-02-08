@@ -1,0 +1,12 @@
+.article {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.h1__article {
+    margin-bottom: 1rem;
+}
+
+.p__article {
+    line-height: 125%;
+}
