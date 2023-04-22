@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-
-
+import ArticleList from '@/component/ArticleList'
+import { Article } from '@/types'
 
 export default function Home(props: { articles: Article[] }) {
   return (
@@ -15,17 +13,7 @@ export default function Home(props: { articles: Article[] }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.headerOne}>Trying out NextJS!</h1>
-        {props.articles.map(article => {
-          return (
-            <article key={article.id} className={styles.article}>
-              <h1 className={styles.h1}>{article.title}</h1>
-              <p className={styles.p}>
-                {article.body}
-              </p>
-            </article>
-          )
-        })}
+        <ArticleList articles={props.articles} />
       </main>
     </>
   )
@@ -60,3 +48,4 @@ export const getStaticProps = async () => {
   }
 
 }
+

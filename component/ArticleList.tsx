@@ -1,9 +1,12 @@
-import React from 'react'
+import { Article } from "@/types";
+import ArticleC from "./Article";
 
 const ArticleList = (props: { articles: Article[] }) => {
     return (
-        <div></div>
+        <ul>
+            {props.articles.map(article => <ArticleC article={article} />)}
+        </ul>
     )
 }
 
-export default ArticleList
+export default ArticleList;
