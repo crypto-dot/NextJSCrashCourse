@@ -35,16 +35,11 @@ export const getStaticProps = async () => {
     }
   } catch (err: any) {
     if (err instanceof Error) {
-      switch (err.cause.res?.status) {
-        case 400: break;
-        case 401: break;
-        // Error handling
-      }
-    }
-
-    else {
+      console.error(err.message)
+    } else {
       console.error(err);
     }
+    return { paths: [], fallback: false };
   }
 
 }
